@@ -1,0 +1,1718 @@
+"""
+A floating point number that requires more precision than IEEE 754 binary 64
+"""
+scalar BigFloat
+
+"""
+A filter to be used against BigFloat fields. All fields are combined with a logical ‘and.’
+"""
+input BigFloatFilter {
+  """
+  Not equal to the specified value, treating null like an ordinary value.
+  """
+  distinctFrom: BigFloat
+
+  """Equal to the specified value."""
+  equalTo: BigFloat
+
+  """Greater than the specified value."""
+  greaterThan: BigFloat
+
+  """Greater than or equal to the specified value."""
+  greaterThanOrEqualTo: BigFloat
+
+  """Included in the specified list."""
+  in: [BigFloat!]
+
+  """
+  Is null (if `true` is specified) or is not null (if `false` is specified).
+  """
+  isNull: Boolean
+
+  """Less than the specified value."""
+  lessThan: BigFloat
+
+  """Less than or equal to the specified value."""
+  lessThanOrEqualTo: BigFloat
+
+  """Equal to the specified value, treating null like an ordinary value."""
+  notDistinctFrom: BigFloat
+
+  """Not equal to the specified value."""
+  notEqualTo: BigFloat
+
+  """Not included in the specified list."""
+  notIn: [BigFloat!]
+}
+
+"""
+A signed eight-byte integer. The upper big integer values are greater than the
+max value for a JavaScript number. Therefore all big integers will be output as
+strings and not numbers.
+"""
+scalar BigInt
+
+"""
+A filter to be used against BigInt fields. All fields are combined with a logical ‘and.’
+"""
+input BigIntFilter {
+  """
+  Not equal to the specified value, treating null like an ordinary value.
+  """
+  distinctFrom: BigInt
+
+  """Equal to the specified value."""
+  equalTo: BigInt
+
+  """Greater than the specified value."""
+  greaterThan: BigInt
+
+  """Greater than or equal to the specified value."""
+  greaterThanOrEqualTo: BigInt
+
+  """Included in the specified list."""
+  in: [BigInt!]
+
+  """
+  Is null (if `true` is specified) or is not null (if `false` is specified).
+  """
+  isNull: Boolean
+
+  """Less than the specified value."""
+  lessThan: BigInt
+
+  """Less than or equal to the specified value."""
+  lessThanOrEqualTo: BigInt
+
+  """Equal to the specified value, treating null like an ordinary value."""
+  notDistinctFrom: BigInt
+
+  """Not equal to the specified value."""
+  notEqualTo: BigInt
+
+  """Not included in the specified list."""
+  notIn: [BigInt!]
+}
+
+"""All input for the create `MobilePad` mutation."""
+input CreateMobilePadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `MobilePad` to be created by this mutation."""
+  mobilePad: MobilePadInput!
+}
+
+"""The output of our create `MobilePad` mutation."""
+type CreateMobilePadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `MobilePad` that was created by this mutation."""
+  mobilePad: MobilePad
+
+  """An edge for our `MobilePad`. May be used by Relay 1."""
+  mobilePadEdge(
+    """The method to use when ordering `MobilePad`."""
+    orderBy: [MobilePadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): MobilePadsEdge
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `Spacecraft` mutation."""
+input CreateSpacecraftInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Spacecraft` to be created by this mutation."""
+  spacecraft: SpacecraftInput!
+}
+
+"""The output of our create `Spacecraft` mutation."""
+type CreateSpacecraftPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `Spacecraft` that was created by this mutation."""
+  spacecraft: Spacecraft
+
+  """An edge for our `Spacecraft`. May be used by Relay 1."""
+  spacecraftEdge(
+    """The method to use when ordering `Spacecraft`."""
+    orderBy: [SpacecraftsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): SpacecraftsEdge
+}
+
+"""All input for the create `StaticPad` mutation."""
+input CreateStaticPadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `StaticPad` to be created by this mutation."""
+  staticPad: StaticPadInput!
+}
+
+"""The output of our create `StaticPad` mutation."""
+type CreateStaticPadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `StaticPad` that was created by this mutation."""
+  staticPad: StaticPad
+
+  """An edge for our `StaticPad`. May be used by Relay 1."""
+  staticPadEdge(
+    """The method to use when ordering `StaticPad`."""
+    orderBy: [StaticPadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): StaticPadsEdge
+}
+
+"""All input for the create `TempPad` mutation."""
+input CreateTempPadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `TempPad` to be created by this mutation."""
+  tempPad: TempPadInput!
+}
+
+"""The output of our create `TempPad` mutation."""
+type CreateTempPadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `TempPad` that was created by this mutation."""
+  tempPad: TempPad
+
+  """An edge for our `TempPad`. May be used by Relay 1."""
+  tempPadEdge(
+    """The method to use when ordering `TempPad`."""
+    orderBy: [TempPadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): TempPadsEdge
+}
+
+"""A location in a connection that can be used for resuming pagination."""
+scalar Cursor
+
+"""
+A point in time as described by the [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601) and, if it has a timezone, [RFC
+3339](https://datatracker.ietf.org/doc/html/rfc3339) standards. Input values
+that do not conform to both ISO 8601 and RFC 3339 may be coerced, which may lead
+to unexpected results.
+"""
+scalar Datetime
+
+"""A range of `Datetime`."""
+type DatetimeRange {
+  """The ending bound of our range."""
+  end: DatetimeRangeBound
+
+  """The starting bound of our range."""
+  start: DatetimeRangeBound
+}
+
+"""
+The value at one end of a range. A range can either include this value, or not.
+"""
+type DatetimeRangeBound {
+  """Whether or not the value of this bound is included in the range."""
+  inclusive: Boolean!
+
+  """The value at one end of our range."""
+  value: Datetime!
+}
+
+"""
+The value at one end of a range. A range can either include this value, or not.
+"""
+input DatetimeRangeBoundInput {
+  """Whether or not the value of this bound is included in the range."""
+  inclusive: Boolean!
+
+  """The value at one end of our range."""
+  value: Datetime!
+}
+
+"""
+A filter to be used against DatetimeRange fields. All fields are combined with a logical ‘and.’
+"""
+input DatetimeRangeFilter {
+  """Adjacent to the specified range."""
+  adjacentTo: DatetimeRangeInput
+
+  """Contained by the specified range."""
+  containedBy: DatetimeRangeInput
+
+  """Contains the specified range."""
+  contains: DatetimeRangeInput
+
+  """Contains the specified value."""
+  containsElement: Datetime
+
+  """
+  Not equal to the specified value, treating null like an ordinary value.
+  """
+  distinctFrom: DatetimeRangeInput
+
+  """Equal to the specified value."""
+  equalTo: DatetimeRangeInput
+
+  """Greater than the specified value."""
+  greaterThan: DatetimeRangeInput
+
+  """Greater than or equal to the specified value."""
+  greaterThanOrEqualTo: DatetimeRangeInput
+
+  """Included in the specified list."""
+  in: [DatetimeRangeInput!]
+
+  """
+  Is null (if `true` is specified) or is not null (if `false` is specified).
+  """
+  isNull: Boolean
+
+  """Less than the specified value."""
+  lessThan: DatetimeRangeInput
+
+  """Less than or equal to the specified value."""
+  lessThanOrEqualTo: DatetimeRangeInput
+
+  """Equal to the specified value, treating null like an ordinary value."""
+  notDistinctFrom: DatetimeRangeInput
+
+  """Not equal to the specified value."""
+  notEqualTo: DatetimeRangeInput
+
+  """Does not extend left of the specified range."""
+  notExtendsLeftOf: DatetimeRangeInput
+
+  """Does not extend right of the specified range."""
+  notExtendsRightOf: DatetimeRangeInput
+
+  """Not included in the specified list."""
+  notIn: [DatetimeRangeInput!]
+
+  """Overlaps the specified range."""
+  overlaps: DatetimeRangeInput
+
+  """Strictly left of the specified range."""
+  strictlyLeftOf: DatetimeRangeInput
+
+  """Strictly right of the specified range."""
+  strictlyRightOf: DatetimeRangeInput
+}
+
+"""A range of `Datetime`."""
+input DatetimeRangeInput {
+  """The ending bound of our range."""
+  end: DatetimeRangeBoundInput
+
+  """The starting bound of our range."""
+  start: DatetimeRangeBoundInput
+}
+
+"""All input for the `deleteMobilePadById` mutation."""
+input DeleteMobilePadByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""All input for the `deleteMobilePad` mutation."""
+input DeleteMobilePadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `MobilePad` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""The output of our delete `MobilePad` mutation."""
+type DeleteMobilePadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  deletedMobilePadId: ID
+
+  """The `MobilePad` that was deleted by this mutation."""
+  mobilePad: MobilePad
+
+  """An edge for our `MobilePad`. May be used by Relay 1."""
+  mobilePadEdge(
+    """The method to use when ordering `MobilePad`."""
+    orderBy: [MobilePadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): MobilePadsEdge
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteSpacecraftById` mutation."""
+input DeleteSpacecraftByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""All input for the `deleteSpacecraft` mutation."""
+input DeleteSpacecraftInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Spacecraft` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""The output of our delete `Spacecraft` mutation."""
+type DeleteSpacecraftPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  deletedSpacecraftId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `Spacecraft` that was deleted by this mutation."""
+  spacecraft: Spacecraft
+
+  """An edge for our `Spacecraft`. May be used by Relay 1."""
+  spacecraftEdge(
+    """The method to use when ordering `Spacecraft`."""
+    orderBy: [SpacecraftsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): SpacecraftsEdge
+}
+
+"""All input for the `deleteStaticPadById` mutation."""
+input DeleteStaticPadByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""All input for the `deleteStaticPad` mutation."""
+input DeleteStaticPadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `StaticPad` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""The output of our delete `StaticPad` mutation."""
+type DeleteStaticPadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  deletedStaticPadId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `StaticPad` that was deleted by this mutation."""
+  staticPad: StaticPad
+
+  """An edge for our `StaticPad`. May be used by Relay 1."""
+  staticPadEdge(
+    """The method to use when ordering `StaticPad`."""
+    orderBy: [StaticPadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): StaticPadsEdge
+}
+
+"""All input for the `deleteTempPadById` mutation."""
+input DeleteTempPadByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""All input for the `deleteTempPad` mutation."""
+input DeleteTempPadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `TempPad` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""The output of our delete `TempPad` mutation."""
+type DeleteTempPadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  deletedTempPadId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `TempPad` that was deleted by this mutation."""
+  tempPad: TempPad
+
+  """An edge for our `TempPad`. May be used by Relay 1."""
+  tempPadEdge(
+    """The method to use when ordering `TempPad`."""
+    orderBy: [TempPadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): TempPadsEdge
+}
+
+"""An input for mutations affecting `LaunchPad`"""
+input LaunchPadInput {
+  id: BigInt
+  type: PadType
+}
+
+type MobilePad implements Node {
+  id: BigInt!
+  name: String!
+
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  timeToReachInHours: BigFloat
+}
+
+"""
+A condition to be used against `MobilePad` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input MobilePadCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `timeToReachInHours` field."""
+  timeToReachInHours: BigFloat
+}
+
+"""
+A filter to be used against `MobilePad` object types. All fields are combined with a logical ‘and.’
+"""
+input MobilePadFilter {
+  """Checks for all expressions in this list."""
+  and: [MobilePadFilter!]
+
+  """Filter by the object’s `id` field."""
+  id: BigIntFilter
+
+  """Filter by the object’s `name` field."""
+  name: StringFilter
+
+  """Negates the expression."""
+  not: MobilePadFilter
+
+  """Checks for any expressions in this list."""
+  or: [MobilePadFilter!]
+
+  """Filter by the object’s `timeToReachInHours` field."""
+  timeToReachInHours: BigFloatFilter
+}
+
+"""An input for mutations affecting `MobilePad`"""
+input MobilePadInput {
+  id: BigInt
+  name: String!
+  timeToReachInHours: BigFloat
+}
+
+"""
+Represents an update to a `MobilePad`. Fields that are set will be updated.
+"""
+input MobilePadPatch {
+  id: BigInt
+  name: String
+  timeToReachInHours: BigFloat
+}
+
+"""A connection to a list of `MobilePad` values."""
+type MobilePadsConnection {
+  """
+  A list of edges which contains the `MobilePad` and cursor to aid in pagination.
+  """
+  edges: [MobilePadsEdge]!
+
+  """A list of `MobilePad` objects."""
+  nodes: [MobilePad]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MobilePad` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MobilePad` edge in the connection."""
+type MobilePadsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MobilePad` at the end of the edge."""
+  node: MobilePad
+}
+
+"""Methods to use when ordering `MobilePad`."""
+enum MobilePadsOrderBy {
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  NATURAL
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+  TIME_TO_REACH_IN_HOURS_ASC
+  TIME_TO_REACH_IN_HOURS_DESC
+}
+
+"""
+The root mutation type which contains root level fields which mutate data.
+"""
+type Mutation {
+  """Creates a single `MobilePad`."""
+  createMobilePad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateMobilePadInput!
+  ): CreateMobilePadPayload
+
+  """Creates a single `Spacecraft`."""
+  createSpacecraft(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateSpacecraftInput!
+  ): CreateSpacecraftPayload
+
+  """Creates a single `StaticPad`."""
+  createStaticPad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateStaticPadInput!
+  ): CreateStaticPadPayload
+
+  """Creates a single `TempPad`."""
+  createTempPad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateTempPadInput!
+  ): CreateTempPadPayload
+
+  """Deletes a single `MobilePad` using its globally unique id."""
+  deleteMobilePad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteMobilePadInput!
+  ): DeleteMobilePadPayload
+
+  """Deletes a single `MobilePad` using a unique key."""
+  deleteMobilePadById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteMobilePadByIdInput!
+  ): DeleteMobilePadPayload
+
+  """Deletes a single `Spacecraft` using its globally unique id."""
+  deleteSpacecraft(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteSpacecraftInput!
+  ): DeleteSpacecraftPayload
+
+  """Deletes a single `Spacecraft` using a unique key."""
+  deleteSpacecraftById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteSpacecraftByIdInput!
+  ): DeleteSpacecraftPayload
+
+  """Deletes a single `StaticPad` using its globally unique id."""
+  deleteStaticPad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteStaticPadInput!
+  ): DeleteStaticPadPayload
+
+  """Deletes a single `StaticPad` using a unique key."""
+  deleteStaticPadById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteStaticPadByIdInput!
+  ): DeleteStaticPadPayload
+
+  """Deletes a single `TempPad` using its globally unique id."""
+  deleteTempPad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteTempPadInput!
+  ): DeleteTempPadPayload
+
+  """Deletes a single `TempPad` using a unique key."""
+  deleteTempPadById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteTempPadByIdInput!
+  ): DeleteTempPadPayload
+
+  """Updates a single `MobilePad` using its globally unique id and a patch."""
+  updateMobilePad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateMobilePadInput!
+  ): UpdateMobilePadPayload
+
+  """Updates a single `MobilePad` using a unique key and a patch."""
+  updateMobilePadById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateMobilePadByIdInput!
+  ): UpdateMobilePadPayload
+
+  """
+  Updates a single `Spacecraft` using its globally unique id and a patch.
+  """
+  updateSpacecraft(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateSpacecraftInput!
+  ): UpdateSpacecraftPayload
+
+  """Updates a single `Spacecraft` using a unique key and a patch."""
+  updateSpacecraftById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateSpacecraftByIdInput!
+  ): UpdateSpacecraftPayload
+
+  """Updates a single `StaticPad` using its globally unique id and a patch."""
+  updateStaticPad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateStaticPadInput!
+  ): UpdateStaticPadPayload
+
+  """Updates a single `StaticPad` using a unique key and a patch."""
+  updateStaticPadById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateStaticPadByIdInput!
+  ): UpdateStaticPadPayload
+
+  """Updates a single `TempPad` using its globally unique id and a patch."""
+  updateTempPad(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateTempPadInput!
+  ): UpdateTempPadPayload
+
+  """Updates a single `TempPad` using a unique key and a patch."""
+  updateTempPadById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateTempPadByIdInput!
+  ): UpdateTempPadPayload
+}
+
+"""An object with a globally unique `ID`."""
+interface Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+}
+
+enum PadType {
+  MOBILE
+  STATIC
+  TEMPORARY
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, the cursor to continue."""
+  endCursor: Cursor
+
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: Cursor
+}
+
+"""The root query type which gives access points into the data universe."""
+type Query implements Node {
+  """Reads and enables pagination through a set of `MobilePad`."""
+  allMobilePads(
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MobilePadCondition
+
+    """
+    A filter to be used in determining which values should be returned by the collection.
+    """
+    filter: MobilePadFilter
+
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """The method to use when ordering `MobilePad`."""
+    orderBy: [MobilePadsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): MobilePadsConnection
+
+  """Reads and enables pagination through a set of `Spacecraft`."""
+  allSpacecrafts(
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: SpacecraftCondition
+
+    """
+    A filter to be used in determining which values should be returned by the collection.
+    """
+    filter: SpacecraftFilter
+
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """The method to use when ordering `Spacecraft`."""
+    orderBy: [SpacecraftsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): SpacecraftsConnection
+
+  """Reads and enables pagination through a set of `StaticPad`."""
+  allStaticPads(
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: StaticPadCondition
+
+    """
+    A filter to be used in determining which values should be returned by the collection.
+    """
+    filter: StaticPadFilter
+
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """The method to use when ordering `StaticPad`."""
+    orderBy: [StaticPadsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): StaticPadsConnection
+
+  """Reads and enables pagination through a set of `TempPad`."""
+  allTempPads(
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TempPadCondition
+
+    """
+    A filter to be used in determining which values should be returned by the collection.
+    """
+    filter: TempPadFilter
+
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """The method to use when ordering `TempPad`."""
+    orderBy: [TempPadsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): TempPadsConnection
+
+  """Reads a single `MobilePad` using its globally unique `ID`."""
+  mobilePad(
+    """The globally unique `ID` to be used in selecting a single `MobilePad`."""
+    nodeId: ID!
+  ): MobilePad
+
+  """Get a single `MobilePad`."""
+  mobilePadById(id: BigInt!): MobilePad
+
+  """Fetches an object given its globally unique `ID`."""
+  node(
+    """The globally unique `ID`."""
+    nodeId: ID!
+  ): Node
+
+  """
+  The root query type must be a `Node` to work well with Relay 1 mutations. This just resolves to `query`.
+  """
+  nodeId: ID!
+
+  """
+  Exposes the root query type nested one level down. This is helpful for Relay 1
+  which can only query top level fields if they are in a particular form.
+  """
+  query: Query!
+
+  """Reads a single `Spacecraft` using its globally unique `ID`."""
+  spacecraft(
+    """
+    The globally unique `ID` to be used in selecting a single `Spacecraft`.
+    """
+    nodeId: ID!
+  ): Spacecraft
+
+  """Get a single `Spacecraft`."""
+  spacecraftById(id: BigInt!): Spacecraft
+
+  """Reads a single `StaticPad` using its globally unique `ID`."""
+  staticPad(
+    """The globally unique `ID` to be used in selecting a single `StaticPad`."""
+    nodeId: ID!
+  ): StaticPad
+
+  """Get a single `StaticPad`."""
+  staticPadById(id: BigInt!): StaticPad
+
+  """Reads a single `TempPad` using its globally unique `ID`."""
+  tempPad(
+    """The globally unique `ID` to be used in selecting a single `TempPad`."""
+    nodeId: ID!
+  ): TempPad
+
+  """Get a single `TempPad`."""
+  tempPadById(id: BigInt!): TempPad
+}
+
+type Spacecraft implements Node {
+  eta(to: LaunchPadInput): DatetimeRange
+  id: BigInt!
+  name: String!
+
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  returnToEarth: DatetimeRange!
+}
+
+"""
+A condition to be used against `Spacecraft` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input SpacecraftCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `returnToEarth` field."""
+  returnToEarth: DatetimeRangeInput
+}
+
+"""
+A filter to be used against `Spacecraft` object types. All fields are combined with a logical ‘and.’
+"""
+input SpacecraftFilter {
+  """Checks for all expressions in this list."""
+  and: [SpacecraftFilter!]
+
+  """Filter by the object’s `id` field."""
+  id: BigIntFilter
+
+  """Filter by the object’s `name` field."""
+  name: StringFilter
+
+  """Negates the expression."""
+  not: SpacecraftFilter
+
+  """Checks for any expressions in this list."""
+  or: [SpacecraftFilter!]
+
+  """Filter by the object’s `returnToEarth` field."""
+  returnToEarth: DatetimeRangeFilter
+}
+
+"""An input for mutations affecting `Spacecraft`"""
+input SpacecraftInput {
+  id: BigInt
+  name: String!
+  returnToEarth: DatetimeRangeInput!
+}
+
+"""
+Represents an update to a `Spacecraft`. Fields that are set will be updated.
+"""
+input SpacecraftPatch {
+  id: BigInt
+  name: String
+  returnToEarth: DatetimeRangeInput
+}
+
+"""A connection to a list of `Spacecraft` values."""
+type SpacecraftsConnection {
+  """
+  A list of edges which contains the `Spacecraft` and cursor to aid in pagination.
+  """
+  edges: [SpacecraftsEdge]!
+
+  """A list of `Spacecraft` objects."""
+  nodes: [Spacecraft]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Spacecraft` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Spacecraft` edge in the connection."""
+type SpacecraftsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Spacecraft` at the end of the edge."""
+  node: Spacecraft
+}
+
+"""Methods to use when ordering `Spacecraft`."""
+enum SpacecraftsOrderBy {
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  NATURAL
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type StaticPad implements Node {
+  id: BigInt!
+  name: String!
+
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  timeToReachInHours: BigFloat
+}
+
+"""
+A condition to be used against `StaticPad` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input StaticPadCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `timeToReachInHours` field."""
+  timeToReachInHours: BigFloat
+}
+
+"""
+A filter to be used against `StaticPad` object types. All fields are combined with a logical ‘and.’
+"""
+input StaticPadFilter {
+  """Checks for all expressions in this list."""
+  and: [StaticPadFilter!]
+
+  """Filter by the object’s `id` field."""
+  id: BigIntFilter
+
+  """Filter by the object’s `name` field."""
+  name: StringFilter
+
+  """Negates the expression."""
+  not: StaticPadFilter
+
+  """Checks for any expressions in this list."""
+  or: [StaticPadFilter!]
+
+  """Filter by the object’s `timeToReachInHours` field."""
+  timeToReachInHours: BigFloatFilter
+}
+
+"""An input for mutations affecting `StaticPad`"""
+input StaticPadInput {
+  id: BigInt
+  name: String!
+  timeToReachInHours: BigFloat
+}
+
+"""
+Represents an update to a `StaticPad`. Fields that are set will be updated.
+"""
+input StaticPadPatch {
+  id: BigInt
+  name: String
+  timeToReachInHours: BigFloat
+}
+
+"""A connection to a list of `StaticPad` values."""
+type StaticPadsConnection {
+  """
+  A list of edges which contains the `StaticPad` and cursor to aid in pagination.
+  """
+  edges: [StaticPadsEdge]!
+
+  """A list of `StaticPad` objects."""
+  nodes: [StaticPad]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `StaticPad` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `StaticPad` edge in the connection."""
+type StaticPadsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `StaticPad` at the end of the edge."""
+  node: StaticPad
+}
+
+"""Methods to use when ordering `StaticPad`."""
+enum StaticPadsOrderBy {
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  NATURAL
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+  TIME_TO_REACH_IN_HOURS_ASC
+  TIME_TO_REACH_IN_HOURS_DESC
+}
+
+"""
+A filter to be used against String fields. All fields are combined with a logical ‘and.’
+"""
+input StringFilter {
+  """
+  Not equal to the specified value, treating null like an ordinary value.
+  """
+  distinctFrom: String
+
+  """
+  Not equal to the specified value, treating null like an ordinary value (case-insensitive).
+  """
+  distinctFromInsensitive: String
+
+  """Ends with the specified string (case-sensitive)."""
+  endsWith: String
+
+  """Ends with the specified string (case-insensitive)."""
+  endsWithInsensitive: String
+
+  """Equal to the specified value."""
+  equalTo: String
+
+  """Equal to the specified value (case-insensitive)."""
+  equalToInsensitive: String
+
+  """Greater than the specified value."""
+  greaterThan: String
+
+  """Greater than the specified value (case-insensitive)."""
+  greaterThanInsensitive: String
+
+  """Greater than or equal to the specified value."""
+  greaterThanOrEqualTo: String
+
+  """Greater than or equal to the specified value (case-insensitive)."""
+  greaterThanOrEqualToInsensitive: String
+
+  """Included in the specified list."""
+  in: [String!]
+
+  """Included in the specified list (case-insensitive)."""
+  inInsensitive: [String!]
+
+  """Contains the specified string (case-sensitive)."""
+  includes: String
+
+  """Contains the specified string (case-insensitive)."""
+  includesInsensitive: String
+
+  """
+  Is null (if `true` is specified) or is not null (if `false` is specified).
+  """
+  isNull: Boolean
+
+  """Less than the specified value."""
+  lessThan: String
+
+  """Less than the specified value (case-insensitive)."""
+  lessThanInsensitive: String
+
+  """Less than or equal to the specified value."""
+  lessThanOrEqualTo: String
+
+  """Less than or equal to the specified value (case-insensitive)."""
+  lessThanOrEqualToInsensitive: String
+
+  """
+  Matches the specified pattern (case-sensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
+  """
+  like: String
+
+  """
+  Matches the specified pattern (case-insensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
+  """
+  likeInsensitive: String
+
+  """Equal to the specified value, treating null like an ordinary value."""
+  notDistinctFrom: String
+
+  """
+  Equal to the specified value, treating null like an ordinary value (case-insensitive).
+  """
+  notDistinctFromInsensitive: String
+
+  """Does not end with the specified string (case-sensitive)."""
+  notEndsWith: String
+
+  """Does not end with the specified string (case-insensitive)."""
+  notEndsWithInsensitive: String
+
+  """Not equal to the specified value."""
+  notEqualTo: String
+
+  """Not equal to the specified value (case-insensitive)."""
+  notEqualToInsensitive: String
+
+  """Not included in the specified list."""
+  notIn: [String!]
+
+  """Not included in the specified list (case-insensitive)."""
+  notInInsensitive: [String!]
+
+  """Does not contain the specified string (case-sensitive)."""
+  notIncludes: String
+
+  """Does not contain the specified string (case-insensitive)."""
+  notIncludesInsensitive: String
+
+  """
+  Does not match the specified pattern (case-sensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
+  """
+  notLike: String
+
+  """
+  Does not match the specified pattern (case-insensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
+  """
+  notLikeInsensitive: String
+
+  """Does not start with the specified string (case-sensitive)."""
+  notStartsWith: String
+
+  """Does not start with the specified string (case-insensitive)."""
+  notStartsWithInsensitive: String
+
+  """Starts with the specified string (case-sensitive)."""
+  startsWith: String
+
+  """Starts with the specified string (case-insensitive)."""
+  startsWithInsensitive: String
+}
+
+type TempPad implements Node {
+  id: BigInt!
+  name: String!
+
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  timeToReachInHours: BigFloat
+}
+
+"""
+A condition to be used against `TempPad` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input TempPadCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `timeToReachInHours` field."""
+  timeToReachInHours: BigFloat
+}
+
+"""
+A filter to be used against `TempPad` object types. All fields are combined with a logical ‘and.’
+"""
+input TempPadFilter {
+  """Checks for all expressions in this list."""
+  and: [TempPadFilter!]
+
+  """Filter by the object’s `id` field."""
+  id: BigIntFilter
+
+  """Filter by the object’s `name` field."""
+  name: StringFilter
+
+  """Negates the expression."""
+  not: TempPadFilter
+
+  """Checks for any expressions in this list."""
+  or: [TempPadFilter!]
+
+  """Filter by the object’s `timeToReachInHours` field."""
+  timeToReachInHours: BigFloatFilter
+}
+
+"""An input for mutations affecting `TempPad`"""
+input TempPadInput {
+  id: BigInt
+  name: String!
+  timeToReachInHours: BigFloat
+}
+
+"""
+Represents an update to a `TempPad`. Fields that are set will be updated.
+"""
+input TempPadPatch {
+  id: BigInt
+  name: String
+  timeToReachInHours: BigFloat
+}
+
+"""A connection to a list of `TempPad` values."""
+type TempPadsConnection {
+  """
+  A list of edges which contains the `TempPad` and cursor to aid in pagination.
+  """
+  edges: [TempPadsEdge]!
+
+  """A list of `TempPad` objects."""
+  nodes: [TempPad]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `TempPad` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `TempPad` edge in the connection."""
+type TempPadsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `TempPad` at the end of the edge."""
+  node: TempPad
+}
+
+"""Methods to use when ordering `TempPad`."""
+enum TempPadsOrderBy {
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  NATURAL
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+  TIME_TO_REACH_IN_HOURS_ASC
+  TIME_TO_REACH_IN_HOURS_DESC
+}
+
+"""All input for the `updateMobilePadById` mutation."""
+input UpdateMobilePadByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+
+  """
+  An object where the defined keys will be set on the `MobilePad` being updated.
+  """
+  mobilePadPatch: MobilePadPatch!
+}
+
+"""All input for the `updateMobilePad` mutation."""
+input UpdateMobilePadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `MobilePad` being updated.
+  """
+  mobilePadPatch: MobilePadPatch!
+
+  """
+  The globally unique `ID` which will identify a single `MobilePad` to be updated.
+  """
+  nodeId: ID!
+}
+
+"""The output of our update `MobilePad` mutation."""
+type UpdateMobilePadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `MobilePad` that was updated by this mutation."""
+  mobilePad: MobilePad
+
+  """An edge for our `MobilePad`. May be used by Relay 1."""
+  mobilePadEdge(
+    """The method to use when ordering `MobilePad`."""
+    orderBy: [MobilePadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): MobilePadsEdge
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateSpacecraftById` mutation."""
+input UpdateSpacecraftByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+
+  """
+  An object where the defined keys will be set on the `Spacecraft` being updated.
+  """
+  spacecraftPatch: SpacecraftPatch!
+}
+
+"""All input for the `updateSpacecraft` mutation."""
+input UpdateSpacecraftInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Spacecraft` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Spacecraft` being updated.
+  """
+  spacecraftPatch: SpacecraftPatch!
+}
+
+"""The output of our update `Spacecraft` mutation."""
+type UpdateSpacecraftPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `Spacecraft` that was updated by this mutation."""
+  spacecraft: Spacecraft
+
+  """An edge for our `Spacecraft`. May be used by Relay 1."""
+  spacecraftEdge(
+    """The method to use when ordering `Spacecraft`."""
+    orderBy: [SpacecraftsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): SpacecraftsEdge
+}
+
+"""All input for the `updateStaticPadById` mutation."""
+input UpdateStaticPadByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+
+  """
+  An object where the defined keys will be set on the `StaticPad` being updated.
+  """
+  staticPadPatch: StaticPadPatch!
+}
+
+"""All input for the `updateStaticPad` mutation."""
+input UpdateStaticPadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `StaticPad` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `StaticPad` being updated.
+  """
+  staticPadPatch: StaticPadPatch!
+}
+
+"""The output of our update `StaticPad` mutation."""
+type UpdateStaticPadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `StaticPad` that was updated by this mutation."""
+  staticPad: StaticPad
+
+  """An edge for our `StaticPad`. May be used by Relay 1."""
+  staticPadEdge(
+    """The method to use when ordering `StaticPad`."""
+    orderBy: [StaticPadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): StaticPadsEdge
+}
+
+"""All input for the `updateTempPadById` mutation."""
+input UpdateTempPadByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+
+  """
+  An object where the defined keys will be set on the `TempPad` being updated.
+  """
+  tempPadPatch: TempPadPatch!
+}
+
+"""All input for the `updateTempPad` mutation."""
+input UpdateTempPadInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `TempPad` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `TempPad` being updated.
+  """
+  tempPadPatch: TempPadPatch!
+}
+
+"""The output of our update `TempPad` mutation."""
+type UpdateTempPadPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """The `TempPad` that was updated by this mutation."""
+  tempPad: TempPad
+
+  """An edge for our `TempPad`. May be used by Relay 1."""
+  tempPadEdge(
+    """The method to use when ordering `TempPad`."""
+    orderBy: [TempPadsOrderBy!]! = [PRIMARY_KEY_ASC]
+  ): TempPadsEdge
+}

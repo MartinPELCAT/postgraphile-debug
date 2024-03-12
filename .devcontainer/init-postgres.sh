@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# See https://hub.docker.com/_/postgres
+set -e
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" -v SERVER_PASSWORD="'$SERVER_PASSWORD'" -v ADMIN_PASSWORD="'$ADMIN_PASSWORD'" <<-EOSQL
+    CREATE ROLE admin WITH LOGIN PASSWORD :ADMIN_PASSWORD CREATEROLE SUPERUSER;
+    CREATE ROLE server WITH LOGIN PASSWORD :SERVER_PASSWORD;
+    CREATE SCHEMA flyway;
+    ALTER SCHEMA flyway OWNER TO admin;
+    ALTER SCHEMA public OWNER TO admin;
+EOSQL
