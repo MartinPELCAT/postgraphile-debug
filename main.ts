@@ -12,7 +12,6 @@ const app = express();
 
 const PORT = 3000 ?? Number(process.env.PORT);
 
-
 const preset: GraphileConfig.Preset = {
   extends: [
     PostGraphileAmberPreset,
@@ -30,7 +29,7 @@ const preset: GraphileConfig.Preset = {
   pgServices: [
     makePgService({
       connectionString: "postgres://server:postgres_server_dev@localhost/platform",
-      schemas: "public",
+      schemas: "space",
     }),
   ],
 };
@@ -38,7 +37,6 @@ const preset: GraphileConfig.Preset = {
 const pgl = postgraphile(preset);
 
 const serv = pgl.createServ(grafserv);
-
 
 const server = app.listen(PORT, () => {
   const url = `http://localhost:${PORT}/`;
